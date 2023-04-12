@@ -24,7 +24,10 @@ function renderGalleryItems(items) {
 
 renderGalleryItems(galleryItems);
 
-const gallery = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionDelay: 250,
+document.addEventListener('DOMContentLoaded', () => {
+    const gallery = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionPosition: 'bottom',
+        captionDelay: 250,
+        });
     });
