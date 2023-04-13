@@ -7,11 +7,11 @@ const galleryContainer = document.querySelector('.gallery');
 
 function renderGalleryItems(items) {
     const galleryItemsMarkup = items
-    .map(({ preview, original, alt }) => {
+    .map(({ preview, original, description }) => {
         return `
         <li class="gallery__item">
             <a class="gallery__link" href="${original}">
-            <img class="gallery__image" src="${preview}" alt="${alt}" />
+            <img class="gallery__image" src="${preview}" alt="${description}" />
             </a>
         </li>
         `;
@@ -23,11 +23,10 @@ function renderGalleryItems(items) {
 }
 
 renderGalleryItems(galleryItems);
-
 document.addEventListener('DOMContentLoaded', () => {
     const gallery = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-        captionDelay: 250,
-        });
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
     });
+});
